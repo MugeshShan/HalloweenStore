@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -27,6 +28,27 @@ namespace HalloweenStore
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("Invoices.aspx");
+        }
+
+        protected void OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = (grdCustomers.SelectedRow.FindControl("lblId") as Label).Text;
+            string firstName = grdCustomers.SelectedRow.Cells[2].Text;
+            string lastName = grdCustomers.SelectedRow.Cells[1].Text;
+            string state = (grdCustomers.SelectedRow.FindControl("lblState") as Label).Text; ;
+            string city = (grdCustomers.SelectedRow.FindControl("lblCity") as Label).Text;
+            string phone = (grdCustomers.SelectedRow.FindControl("lblPhone") as Label).Text;
+
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[6] { new DataColumn("Id", typeof(int)),
+                    new DataColumn("FirstName", typeof(string)),
+                    new DataColumn("LastName",typeof(string)),
+                    new DataColumn("State",typeof(string)),
+                    new DataColumn("City",typeof(string)),
+                    new DataColumn("Phone",typeof(string))   });
+            dt.Rows.Add(id, firstName, lastName, state, city, phone);
+            DetailsView1.DataSource = dt;
+            DetailsView1.DataBind();
         }
 
         void grdCustomers_RowCommand(Object sender, GridViewCommandEventArgs e)
