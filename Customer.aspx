@@ -45,12 +45,6 @@
                                 <asp:Label ID="lblPhone" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-<%--                        <asp:BoundField DataField="State" HeaderText="State" SortExpression="State,City">
-                        <ItemStyle CssClass="col-xs-2" />
-                        </asp:BoundField>
-                        <asp:BoundField DataField="City" HeaderText="City">
-                        <ItemStyle CssClass="col-xs-4" />
-                        </asp:BoundField>--%>
                         <asp:ButtonField Text="Select" CommandName="Select" />
                         
                     </Columns>
@@ -78,6 +72,7 @@
             </div> 
             <div class="buttons">
                 <asp:Button ID="Button3" class="button3" runat="server" Text="Back" OnClick="Button3_Click" /> 
+                <asp:Button ID="Button4" class="button4" runat="server" Text="Customer List View" OnClick="Button4_Click" /> 
             </div>
         </form>
         

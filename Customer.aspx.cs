@@ -18,6 +18,11 @@ namespace HalloweenStore
         {
             Response.Redirect("Main.aspx");
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerList.aspx");
+        }
         protected void grdCustomers_PreRender(object sender, EventArgs e)
         {
             if (grdCustomers.HeaderRow != null)

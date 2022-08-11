@@ -4,6 +4,29 @@
     margin-top: 1em;
 }
 
+.newsBox {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
 .jumbotron {
     background: url("../Images/banner.jpg");
     background-size: 100% 100%;
@@ -42,6 +65,17 @@
     display: inline-block;
     font-size: 16px;
     margin-left: 10px;
+}
+
+.button4 {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: lightblue;
 }
 
 .buttons {
